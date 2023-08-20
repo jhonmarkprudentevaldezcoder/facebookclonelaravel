@@ -1,26 +1,40 @@
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 fixed right-0 top-0 w-full ">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between h-16">
-            <div class="flex">
+    <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 ">
+        <div class="flex justify-between h-16 ">
+            <div class="flex  w-full justify-start">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="shrink-0 flex items-center flex-row gap-3 w-1/4">
                     <a href="{{ route('dashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
+                    <input class="w-full bg-gray-100 rounded-xl border-none" type="text" name="searc" id="searc"
+                        placeholder=" search bookface  " />
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-3 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                <div class="hidden space-x-3 sm:-my-px sm:ml-10 sm:flex ">
+                    <x-nav-link class="ml-10" href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         <img src=" {{ asset('/logo/home.png') }}" alt="logo" width="35">
                     </x-nav-link>
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}">
                         <img src=" {{ asset('/logo/share.png') }}" alt="logo" width="35">
                     </x-nav-link>
                 </div>
             </div>
 
+            <div class="hidden space-x-3 sm:-my-px  sm:flex">
+
+                <x-nav-link class="ml-10" href="{{ route('dashboard') }}">
+                    <img src=" {{ asset('/logo/plus.png') }}" alt="logo" width="35">
+                </x-nav-link>
+                <x-nav-link class="ml-10" href="{{ route('dashboard') }}">
+                    <img src=" {{ asset('/logo/messenger.png') }}" alt="logo" width="35">
+                </x-nav-link>
+                <x-nav-link href="{{ route('dashboard') }}">
+                    <img src=" {{ asset('/logo/bell.png') }}" alt="logo" width="35">
+                </x-nav-link>
+            </div>
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

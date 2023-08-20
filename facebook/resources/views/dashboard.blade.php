@@ -13,9 +13,10 @@
         </div>
 
         <div class="overflow-auto max-w-6xl mx-auto ">
-
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+                @include('components/postaction')
+                {{--
+                <x-welcome /> --}}
             </div>
         </div>
 
