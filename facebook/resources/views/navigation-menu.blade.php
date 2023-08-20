@@ -4,11 +4,11 @@
         <div class="flex justify-between h-16 ">
             <div class="flex  w-full justify-start">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center flex-row gap-3 w-1/4">
+                <div class="shrink-0 flex items-center flex-row gap-3 w-full md:w-1/4">
                     <a href="{{ route('dashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
-                    <input class="w-full bg-gray-100 rounded-xl border-none" type="text" name="searc" id="searc"
+                    <input class="w-full bg-gray-100 rounded-xl border-none" type="text" name="search" id="search"
                         placeholder=" search bookface  " />
                 </div>
 
