@@ -4,7 +4,7 @@
             <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
                 alt="{{ Auth::user()->name }}" />
             <h2 class="ml-3  font-semibold text-gray-900">
-                <a href="https://laravel.com/docs">{{ Auth::user()->name }}</a>
+                <a href="/">{{ Auth::user()->name }}</a>
             </h2>
         </div>
 

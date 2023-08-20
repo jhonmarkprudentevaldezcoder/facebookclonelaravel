@@ -23,17 +23,115 @@
                 </div>
             </div>
 
-            <div class="hidden space-x-3 sm:-my-px  sm:flex">
+            <div class="hidden space-x-3 sm:-my-px  sm:flex md:flex flex-row items-center">
+                <x-dropdown width="48">
+                    <x-slot name="trigger">
+                        <button
+                            class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
+                            <img width="35" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                        </button>
+                    </x-slot>
 
-                <x-nav-link class="ml-10" href="{{ route('dashboard') }}">
-                    <img src=" {{ asset('/logo/plus.png') }}" alt="logo" width="35">
-                </x-nav-link>
+                    <x-slot name="content" class="p-5">
+
+                        <!-- Account Management -->
+                        <x-dropdown-link {{-- href="{{ route('profile.show') }}" --}}
+                            class="flex flex-row gap-2 items-center">
+                            <h1 class="p5 text-xl font-sans font-bold"> {{ __('Create') }}</h1>
+                        </x-dropdown-link>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Post') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Share a post on News Feed.') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Story') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Share a photo or Write somethin.') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Reel') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Share a reel.') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Life event') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Add a life event to your profile.') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+                        <div class="border-t border-gray-200"></div>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Page') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Connect and share with customers of fans')
+                                    }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Ad') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Advertise your business, brand or
+                                    organization') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Group') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Connect with people who share your
+                                    interests.') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Event') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Bring people together with a public or
+                                    private event.') }}</span>
+                            </div>
+                        </x-dropdown-link>
+
+                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                            <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
+                            <div class="flex flex-col">
+                                <span class="text-gray-900 text-base">{{ __('Marketplace listing') }}</span>
+                                <span class="text-gray-600 text-sm">{{ __('Sell items to people in your community')
+                                    }}</span>
+                            </div>
+                        </x-dropdown-link>
+                    </x-slot>
+                </x-dropdown>
+
                 <x-nav-link class="ml-10" href="{{ route('dashboard') }}">
                     <img src=" {{ asset('/logo/messenger.png') }}" alt="logo" width="35">
                 </x-nav-link>
                 <x-nav-link href="{{ route('dashboard') }}">
                     <img src=" {{ asset('/logo/bell.png') }}" alt="logo" width="35">
                 </x-nav-link>
+
+
+
             </div>
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Teams Dropdown -->
@@ -121,8 +219,12 @@
                                 {{ __('Manage Account') }}
                             </div>
 
-                            <x-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                            <x-dropdown-link href="{{ route('profile.show') }}"
+                                class="flex flex-row gap-3 items-center">
+                                <img class="h-8 w-8 rounded-full object-cover"
+                                    src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                <div class="border-t border-gray-200"></div>
+                                <div>{{ Auth::user()->name }}</div>
                             </x-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())

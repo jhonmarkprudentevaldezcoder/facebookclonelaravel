@@ -17,7 +17,7 @@
             Live
             video</div>
         <div class="hover:cursor-pointer flex flex-row items-center gap-3 hover:bg-gray-100 px-8 py-1 rounded-md "><img
-                class="h-8 w-8 rounded-full object-cover" src="{{ asset('/logo/live.png') }}"
+                class="h-8 w-8 rounded-full object-cover" src="{{ asset('/logo/video-camera.png') }}"
                 alt="findFriends" />Photo/video</div>
         <div class="hover:cursor-pointer flex flex-row items-center gap-3 hover:bg-gray-100 px-8 py-1 rounded-md "><img
                 class="h-8 w-8 rounded-full object-cover" src="{{ asset('/logo/smile.png') }}"
