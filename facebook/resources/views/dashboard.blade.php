@@ -4,7 +4,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot> --}}
-    <div class=" flex flex-col md:flex-row justify-between md:p-3 gap-1">
+    <div class=" flex flex-col md:flex-row justify-between p-3 gap-1">
 
         <div class=" md:hidden lg:flex hidden max-w-md mx-auto ">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -12,10 +12,12 @@
             </div>
         </div>
 
-        <div class="overflow-auto w-full md:max-w-6xl mx-auto ">
+        <div class="overflow-auto w-f md:max-w-6xl mx-auto ">
+            <div class="overflow-hidden shadow-xl sm:rounded-lg">
+                @include('components/story')
+            </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @include('components/postaction')
-
             </div>
 
             <div class="mt-12">

@@ -6,6 +6,8 @@
             alt="{{ Auth::user()->name }}" />
         <input class="w-full bg-gray-100 rounded-xl border-none" type="text" name="searc" id="searc"
             placeholder="what's ony your mind " />
+        <img height="20" width="20" class="md:hidden h-8 w-8 rounded-full object-cover"
+            src="{{ asset('/logo/gallery.png') }}" alt="findFriends" />
     </div>
     <hr class="" />
 
