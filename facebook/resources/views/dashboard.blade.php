@@ -6,7 +6,7 @@
     </x-slot> --}}
     <div class=" flex flex-col md:flex-row justify-between p-3 gap-1">
 
-        <div class=" md:hidden lg:flex hidden max-w-md mx-auto ">
+        <div class=" md:flex hidden max-w-md mx-auto ">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 @include('components/leftbanner')
             </div>
@@ -17,6 +17,7 @@
                 @include('components/story')
             </div>
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                @include('components/modal-post')
                 @include('components/postaction')
             </div>
 
@@ -27,7 +28,7 @@
         </div>
 
 
-        <div class="max-w-sm  mx-auto ">
+        <div class="hidden md:hidden max-w-sm  mx-auto lg:flex">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <x-welcome />
             </div>

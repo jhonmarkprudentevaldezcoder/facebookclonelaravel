@@ -40,7 +40,9 @@
                             <h1 class="p5 text-xl font-sans font-bold"> {{ __('Create') }}</h1>
                         </x-dropdown-link>
 
-                        <x-dropdown-link href="{{ route('profile.show') }}" class="flex flex-row gap-5 items-center">
+                        <x-dropdown-link data-modal-target="authentication-modal"
+                            data-modal-toggle="authentication-modal"
+                            class="flex flex-row gap-5 items-center cursor-pointer">
                             <img width="25" src="{{ asset('/logo/plus.png') }}" alt="plus" />
                             <div class="flex flex-col">
                                 <span class="text-gray-900 text-base">{{ __('Post') }}</span>

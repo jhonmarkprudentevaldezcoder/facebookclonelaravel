@@ -21,7 +21,16 @@
         {{ $slot }}
     </div>
 
-
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const hiddenDiv = document.getElementById('hiddenDiv');
+        
+        toggleButton.addEventListener('click', () => {
+            hiddenDiv.classList.toggle('hidden');
+            hiddenDiv.classList.toggle('flex');
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 </body>
 
 </html>

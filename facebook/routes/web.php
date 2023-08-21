@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
+use App\Http\Livewire\Createpost;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,4 +29,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/post', [PostController::class, 'savePost'])->name('post.save');
+    Route::post('/comment', [CommentController::class, 'saveComment'])->name('comment.save');
 });
+
+
+require_once __DIR__ . '/jetstream.php';

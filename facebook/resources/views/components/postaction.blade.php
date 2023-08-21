@@ -4,7 +4,8 @@
     <div class=" flex flex-row items-center gap-4">
         <img class="h-12 w-12 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
             alt="{{ Auth::user()->name }}" />
-        <input class="w-full bg-gray-100 rounded-xl border-none" type="text" name="searc" id="searc"
+        <input data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+            class="w-full  bg-gray-100 rounded-xl border-none" type="text" name="searc" id="searc"
             placeholder="what's ony your mind " />
         <img height="20" width="20" class="md:hidden h-8 w-8 rounded-full object-cover"
             src="{{ asset('/logo/gallery.png') }}" alt="findFriends" />
