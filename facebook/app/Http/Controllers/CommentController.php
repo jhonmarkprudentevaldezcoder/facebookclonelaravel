@@ -25,5 +25,10 @@ class CommentController extends Controller
         return redirect()->route('dashboard');
     }
 
+    public function deleteComment(Comment $comment)
+    {
+        $comment->delete();
+        return redirect()->route('dashboard');
+    }
 
 }

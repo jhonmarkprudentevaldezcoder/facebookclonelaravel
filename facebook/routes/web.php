@@ -32,7 +32,10 @@ Route::middleware([
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::post('/post', [PostController::class, 'savePost'])->name('post.save');
+
+    //comment 
     Route::post('/comment', [CommentController::class, 'saveComment'])->name('comment.save');
+    Route::delete('/comment/{comment}', [CommentController::class, 'deleteComment'])->name('comment.delete');
 });
 
 

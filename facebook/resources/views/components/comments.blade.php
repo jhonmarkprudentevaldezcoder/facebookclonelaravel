@@ -4,7 +4,7 @@
         <form method="POST" action="{{ route('comment.save') }}">
             @csrf
             <div class="py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 ">
-                <input type="hidden" name="user_id" name="user_id" id="user_id" value="{{ Auth::user()->name }}">
+                <input type="hidden" name="user_id" name="user_id" id="user_id" value="{{ Auth::user()->email }}">
                 <input type="hidden" name="post_id" name="post_id" id="post_id" value="{{ $post->id }}">
                 <label for="comment" class="sr-only">Your comment </label>
                 <input type="message" id="comment" name="comment"
@@ -29,11 +29,8 @@
                     <p class="text-sm text-gray-600 ">{{$comment->created_at->diffForHumans() }}</p> --}}
                 </div>
 
-
-                @if (Auth::user()->name != $comment->user_id)
-
+                @if (Auth::user()->email != $comment->user_id)
                 @else
-
                 <button id="dropdownComment1Button" data-dropdown-toggle="dropdownComment1"
                     class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 "
                     type="button">
@@ -48,11 +45,14 @@
                 <!-- Dropdown menu -->
                 <div id="dropdownComment1" class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow ">
                     <ul class="py-1 text-sm text-gray-700 " aria-labelledby="dropdownMenuIconHorizontalButton">
+
                         <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 ">Edit</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 px-4 hover:bg-gray-100 ">Remove</a>
+                            <form class="w-full" action="{{ route('comment.delete', $comment->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                    class="text-red-600 py-2 px-4 hover:bg-gray-100 w-full  ">Delete</button>
+                            </form>
                         </li>
 
                     </ul>
